@@ -53,7 +53,7 @@ const TableComponent = () => {
                     <span>{data.symbol}</span>
                   </td>
                   <td className="py-4">{data.name}</td>
-                  <td className="py-4">price</td>
+                  <td className="py-4">{data.current_price}</td>
                   <td className="py-4">total volume</td>
                   <td className="py-4">market cap change</td>
                   <td className="py-4">1H</td>
