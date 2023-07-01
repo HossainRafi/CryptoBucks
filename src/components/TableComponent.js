@@ -49,6 +49,8 @@ const TableComponent = () => {
                         </defs>
                       </svg>
                     </button>
+                    <img className="w-[1.2rem] h-[1.2rem] mx-1.5" src={data.image} alt="" />
+                    <span>{data.symbol}</span>
                   </td>
                   <td className="py-4">{data.name}</td>
                   <td className="py-4">price</td>
