@@ -55,7 +55,7 @@ const TableComponent = () => {
                   <td className="py-4">{data.name}</td>
                   <td className="py-4">{data.current_price}</td>
                   <td className="py-4">{data.total_volume}</td>
-                  <td className="py-4">market cap change</td>
+                  <td className="py-4">{data.market_cap_change_percentage_24h}</td>
                   <td className="py-4">1H</td>
                   <td className="py-4">24H</td>
                   <td className="py-4">7D</td>
