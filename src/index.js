@@ -2,15 +2,37 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Home from "./pages/Home";
 
+// ======================= Import Pages =====================
+import Home from "./pages/Home";
+import Crypto from './pages/Crypto';
+import Trending from './pages/Trending';
+import Saved from './pages/Saved';
+
+
+// ================== React Router Pages ===================
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    children:[
+      {
+        path:'/',
+        element:<Crypto/>
+      },
+      {
+        path:'/trending',
+        element:<Trending/>
+      },
+      {
+        path:'/saved',
+        element:<Saved/>
+      },
+    ]
   },
 ]);
 
+// ================== React Root Elements ==================
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
