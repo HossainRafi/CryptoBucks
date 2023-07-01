@@ -65,7 +65,9 @@ const TableComponent = () => {
                   <td className="py-4">
                     {data.price_change_percentage_24h_in_currency}
                   </td>
-                  <td className="py-4">7D</td>
+                  <td className="py-4">
+                    {data.price_change_percentage_7d_in_currency}
+                  </td>
                 </tr>
               );
             })}
