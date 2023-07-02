@@ -12,7 +12,7 @@ const Search = () => {
         id=""
       />
       <button className="absolute right-1 cursor-pointer" type="submit">
-        <img src={searchIcon} alt="" />
+        <img src={searchIcon} alt="icon" className="w-full h-auto" />
       </button>
     </form>
   );
