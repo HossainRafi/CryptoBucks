@@ -17,6 +17,7 @@ const SearchInput = ({ handleSearch }) => {
 
   const selectCoin = (coin) => {
     setCoinSearch(coin);
+    setSearchText("")
     setSearchData()
   };
 
