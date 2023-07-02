@@ -7,7 +7,7 @@ const Search = () => {
   let handleInput = (e) => {
     e.preventDefault();
     let query = e.target.value;
-    console.log(query);
+    setSearchText(query);
   };
 
   return (
@@ -18,6 +18,7 @@ const Search = () => {
         type="text"
         name="search"
         onChange={handleInput}
+        value={searchText}
       />
       <button className="absolute right-1 cursor-pointer" type="submit">
         <img src={searchIcon} alt="icon" className="w-full h-auto" />
