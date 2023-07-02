@@ -8,9 +8,7 @@ export const CryptoProvider = ({ children }) => {
   // ================ States ====================
   const [cryptoData, setCryptoData] = useState();
   const [searchData, setSearchData] = useState();
-  const [coinSearch, setCoinSearch] = useState("")
-
-
+  const [coinSearch, setCoinSearch] = useState("");
 
   // ================ Get crypto data ===============
   const getCryptoData = async () => {
@@ -43,10 +41,12 @@ export const CryptoProvider = ({ children }) => {
 
   useLayoutEffect(() => {
     getCryptoData();
-  }, []);
+  }, [coinSearch]);
 
   return (
-    <CryptoContext.Provider value={{ cryptoData, searchData, getSearchResult }}>
+    <CryptoContext.Provider
+      value={{ cryptoData, searchData, getSearchResult, setCoinSearch }}
+    >
       {children}
     </CryptoContext.Provider>
   );
