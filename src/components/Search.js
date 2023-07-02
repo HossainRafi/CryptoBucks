@@ -5,7 +5,7 @@ import debounce from "lodash.debounce";
 
 const SearchInput = ({ handleSearch }) => {
   const [searchText, setSearchText] = useState("");
-  let {searchData}=useContext(CryptoContext)
+  let { searchData, setCoinSearch } = useContext(CryptoContext);
 
   // function for input handling
   let handleInput = (e) => {
@@ -13,6 +13,10 @@ const SearchInput = ({ handleSearch }) => {
     let query = e.target.value;
     setSearchText(query);
     handleSearch(query);
+  };
+
+  const selectCoin = (coin) => {
+    setCoinSearch(coin);
   };
 
   return (
@@ -33,22 +37,27 @@ const SearchInput = ({ handleSearch }) => {
 
       {searchText.length > 0 ? (
         <ul className="absolute top-11 right-0 w-96 h-96 rounded overflow-x-hidden py-2 bg-gray-200 bg-opacity-60 backdrop-blur-md">
-          {searchData ? searchData.map(coin =>{
-            return (
-              <li
-                className="flex items-center ml-4 my-2 cursor-pointer"
-                key={coin.id}
-              >
-                <img
-                  className="w-[1rem] h-[1rem] mx-1.5"
-                  src={coin.thumb}
-                  alt={coin.name}
-                />
+          {searchData ? (
+            searchData.map((coin) => {
+              return (
+                <li
+                  className="flex items-center ml-4 my-2 cursor-pointer"
+                  key={coin.id}
+                  onClick={() => selectCoin(coin.id)}
+                >
+                  <img
+                    className="w-[1rem] h-[1rem] mx-1.5"
+                    src={coin.thumb}
+                    alt={coin.name}
+                  />
 
-                <span>{coin.name}</span>
-              </li>
-            );
-          }) : <h2>Please wait....</h2>}
+                  <span>{coin.name}</span>
+                </li>
+              );
+            })
+          ) : (
+            <h2>Please wait....</h2>
+          )}
         </ul>
       ) : null}
     </>
