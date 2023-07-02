@@ -32,7 +32,7 @@ const SearchInput = ({ handleSearch }) => {
       </form>
 
       {searchText.length > 0 ? (
-        <ul className="absolute top-11 right-0 w-full h-96 rounded overflow-x-hidden py-2 bg-gray-200 bg-opacity-60 backdrop-blur-md">
+        <ul className="absolute top-11 right-0 w-96 h-96 rounded overflow-x-hidden py-2 bg-gray-200 bg-opacity-60 backdrop-blur-md">
           {searchData ? searchData.map(coin =>{
             return (
               <li
@@ -63,9 +63,9 @@ const Search = () => {
   }, 2000);
 
   return (
-    <>
+    <div className="relative">
       <SearchInput handleSearch={debounceFunc} />
-    </>
+    </div>
   );
 };
 
