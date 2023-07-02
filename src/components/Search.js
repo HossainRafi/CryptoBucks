@@ -3,19 +3,15 @@ import searchIcon from "../assets/search-icon.svg";
 import { CryptoContext } from "../context/CryptoContext";
 import debounce from "lodash.debounce";
 
-const Search = () => {
+
+const SearchInput=({handleSearch})=>{
   const [searchText, setSearchText] = useState("");
-  let { getSearchResult } = useContext(CryptoContext);
 
-  const debounceFunc = debounce(function (val) {
-    getSearchResult(val);
-  }, 2000);
-
-  let handleInput = (e) => {
+   let handleInput = (e) => {
     e.preventDefault();
     let query = e.target.value;
     setSearchText(query);
-    debounceFunc(query);
+    handleSearch(query);
   };
 
   return (
@@ -40,6 +36,23 @@ const Search = () => {
           <li>ethereum</li>
         </ul>
       ) : null}
+    </>
+  );
+}
+
+const Search = () => {
+  
+  let { getSearchResult } = useContext(CryptoContext);
+
+  const debounceFunc = debounce(function (val) {
+    getSearchResult(val);
+  }, 2000);
+
+ 
+
+  return (
+    <>
+      <SearchInput handleSearch={debounceFunc} />
     </>
   );
 };
