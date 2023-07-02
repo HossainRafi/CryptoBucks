@@ -57,7 +57,7 @@ const TableComponent = () => {
                   <td className="py-4">{data.current_price}</td>
                   <td className="py-4">{data.total_volume}</td>
                   <td className="py-4">
-                    {Number(data.market_cap_change_percentage_24h).toFixed(3)}
+                    {data.market_cap_change_percentage_24h} %
                   </td>
                   <td
                     className={
