@@ -45,7 +45,13 @@ export const CryptoProvider = ({ children }) => {
 
   return (
     <CryptoContext.Provider
-      value={{ cryptoData, searchData, getSearchResult, setCoinSearch }}
+      value={{
+        cryptoData,
+        searchData,
+        getSearchResult,
+        setCoinSearch,
+        setSearchData,
+      }}
     >
       {children}
     </CryptoContext.Provider>

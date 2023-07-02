@@ -5,7 +5,7 @@ import debounce from "lodash.debounce";
 
 const SearchInput = ({ handleSearch }) => {
   const [searchText, setSearchText] = useState("");
-  let { searchData, setCoinSearch } = useContext(CryptoContext);
+  let { searchData, setCoinSearch, setSearchData } = useContext(CryptoContext);
 
   // function for input handling
   let handleInput = (e) => {
@@ -17,6 +17,7 @@ const SearchInput = ({ handleSearch }) => {
 
   const selectCoin = (coin) => {
     setCoinSearch(coin);
+    setSearchData()
   };
 
   return (
