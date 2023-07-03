@@ -79,22 +79,28 @@ const Pagination = () => {
             {currentPage}
           </button>
         </li>
-        <li>
-          <button
-            onClick={next}
-            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
-          >
-            {currentPage + 1}
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={multiStepNext}
-            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg font-bold"
-          >
-            ...
-          </button>
-        </li>
+
+        {currentPage + 1 !== TotalNumber && currentPage !== TotalNumber ? (
+          <li>
+            <button
+              onClick={next}
+              className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
+            >
+              {currentPage + 1}
+            </button>
+          </li>
+        ) : null}
+
+        {currentPage + 1 !== TotalNumber && currentPage !== TotalNumber ? (
+          <li>
+            <button
+              onClick={multiStepNext}
+              className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg font-bold"
+            >
+              ...
+            </button>
+          </li>
+        ) : null}
 
         {currentPage !== TotalNumber ? (
           <li>
