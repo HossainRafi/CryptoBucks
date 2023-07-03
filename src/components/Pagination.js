@@ -23,6 +23,15 @@ const Pagination = () => {
     }
   };
 
+  // ========== Function for if user wants to go more than one page forward =============
+  const multiStepNext = () => {
+    if (currentPage + 3 >= TotalNumber) {
+      setCurrentPage(TotalNumber - 1);
+    } else {
+      setCurrentPage(currentPage + 3);
+    }
+  };
+
   return (
     <div className="flex items-center">
       <ul className="flex items-center justify-end text-sm">
@@ -65,7 +74,10 @@ const Pagination = () => {
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg font-bold">
+          <button
+            onClick={multiStepNext}
+            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg font-bold"
+          >
             ...
           </button>
         </li>
