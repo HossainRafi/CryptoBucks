@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CryptoContext } from "./../context/CryptoContext";
+import Pagination from "./Pagination";
 
 const TableComponent = () => {
   let { cryptoData, currency } = useContext(CryptoContext);
@@ -103,6 +104,8 @@ const TableComponent = () => {
           </tbody>
         </table>
       ) : null}
+
+      <Pagination />
     </div>
   );
 };
