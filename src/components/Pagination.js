@@ -42,17 +42,17 @@ const Pagination = () => {
         </li>
         <li>
           <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5">
-            1
+            {currentPage-1}
           </button>
         </li>
         <li>
           <button className="ouline-0  rounded-full w-7 h-7 flex items-center justify-center bg-cyan text-gray-300 mx-1.5">
-            2
+            {currentPage}
           </button>
         </li>
         <li>
           <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5">
-            3
+            {currentPage+1}
           </button>
         </li>
         <li>
