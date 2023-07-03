@@ -20,6 +20,7 @@ const Filters = () => {
   return (
     <div className="w-full h-12 border-2 border-gray-100 rounded-lg flex items-center justify-between relative">
       <Search />
+
       <div className="flex mr-7">
         <form
           className="relative flex items-center font-nunito mr-12"
@@ -43,7 +44,19 @@ const Filters = () => {
           </button>
         </form>
       </div>
-      <div>sorting</div>
+      <label>
+        <span>sort by:</span>
+        <select name="sortby">
+          <option value="market_cap_desc">market cap desc</option>
+          <option value="market_cap_asc">market cap asc</option>
+          <option value="volume_desc">volume desc</option>
+          <option value="volume_asc">volume asc</option>
+          <option value="id_desc">id desc</option>
+          <option value="id_asc">id asc</option>
+          <option value="gecko_desc">gecko desc</option>
+          <option value="gecko_asc">gecko asc</option>
+        </select>
+      </label>
     </div>
   );
 };
