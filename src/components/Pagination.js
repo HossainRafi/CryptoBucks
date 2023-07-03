@@ -63,14 +63,18 @@ const Pagination = () => {
             ...
           </button>
         </li>
-        <li>
-          <button
-            onClick={prev}
-            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
-          >
-            {currentPage - 1}
-          </button>
-        </li>
+
+        {currentPage - 1 !== 0 ? (
+          <li>
+            <button
+              onClick={prev}
+              className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
+            >
+              {currentPage - 1}
+            </button>
+          </li>
+        ) : null}
+
         <li>
           <button
             disabled
