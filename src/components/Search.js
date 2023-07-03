@@ -7,7 +7,6 @@ const SearchInput = ({ handleSearch }) => {
   const [searchText, setSearchText] = useState("");
   let { searchData, setCoinSearch, setSearchData } = useContext(CryptoContext);
 
-  // function for input handling
   let handleInput = (e) => {
     e.preventDefault();
     let query = e.target.value;
@@ -15,15 +14,23 @@ const SearchInput = ({ handleSearch }) => {
     handleSearch(query);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(searchText);
+  };
+
   const selectCoin = (coin) => {
     setCoinSearch(coin);
-    setSearchText("")
-    setSearchData()
+    setSearchText("");
+    setSearchData();
   };
 
   return (
     <>
-      <form className="w-96 relative flex items-center ml-7 font-nunito">
+      <form
+        className="w-96 relative flex items-center ml-7 font-nunito"
+        onSubmit={handleSubmit}
+      >
         <input
           className="w-full rounded bg-gray-200 placeholder:text-gray-100 pl-2 required outline-0 border border-transparent focus:border-cyan"
           placeholder="Search Here ....."
