@@ -36,33 +36,42 @@ const Pagination = () => {
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg">
+          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg font-bold">
             ...
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5">
-            {currentPage-1}
+          <button
+            onClick={prev}
+            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
+          >
+            {currentPage - 1}
           </button>
         </li>
         <li>
-          <button className="ouline-0  rounded-full w-7 h-7 flex items-center justify-center bg-cyan text-gray-300 mx-1.5">
+          <button
+            disabled
+            className="ouline-0  rounded-full w-7 h-7 flex items-center justify-center bg-cyan text-gray-300 mx-1.5 font-bold"
+          >
             {currentPage}
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5">
-            {currentPage+1}
+          <button
+            onClick={next}
+            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
+          >
+            {currentPage + 1}
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg">
+          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg font-bold">
             ...
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5">
-            100
+          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold">
+            {TotalNumber}
           </button>
         </li>
         <li className="flex items-center">
