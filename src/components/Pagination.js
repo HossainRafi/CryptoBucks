@@ -70,7 +70,10 @@ const Pagination = () => {
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold">
+          <button
+            onClick={() => setCurrentPage(TotalNumber)}
+            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
+          >
             {TotalNumber}
           </button>
         </li>
