@@ -5,7 +5,12 @@ const Filters = () => {
   return (
     <div className="w-full h-12 border-2 border-gray-100 rounded-lg flex items-center justify-between relative">
       <Search />
-      <div>currency</div>
+      <div>
+        <form>
+          <input type="text" />
+          <button type="submit">submit</button>
+        </form>
+      </div>
       <div>sorting</div>
     </div>
   );
