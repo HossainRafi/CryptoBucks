@@ -7,6 +7,7 @@ const Pagination = () => {
 
   const TotalNumber = 250;
 
+  // ========== Next btn functionality ===========
   const next = () => {
     if (currentPage === TotalNumber) {
       return null;
@@ -15,6 +16,7 @@ const Pagination = () => {
     }
   };
 
+  // ========== Previus btn functionality ===========
   const prev = () => {
     if (currentPage === 1) {
       return null;
@@ -32,6 +34,15 @@ const Pagination = () => {
     }
   };
 
+  // ========== Function for if user wants to go more than one page backward =============
+  const multiStepPrev = () => {
+    if (currentPage - 3 <= 1) {
+      setCurrentPage(TotalNumber + 1);
+    } else {
+      setCurrentPage(currentPage - 2);
+    }
+  };
+
   return (
     <div className="flex items-center">
       <ul className="flex items-center justify-end text-sm">
@@ -45,7 +56,10 @@ const Pagination = () => {
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg font-bold">
+          <button
+            onClick={multiStepPrev}
+            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg font-bold"
+          >
             ...
           </button>
         </li>
