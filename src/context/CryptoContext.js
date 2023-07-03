@@ -9,6 +9,7 @@ export const CryptoProvider = ({ children }) => {
   const [cryptoData, setCryptoData] = useState();
   const [searchData, setSearchData] = useState();
   const [coinSearch, setCoinSearch] = useState("");
+  const [currency, setCurrency] = useState("usd");
 
   // ================ Get crypto data ===============
   const getCryptoData = async () => {
@@ -50,6 +51,8 @@ export const CryptoProvider = ({ children }) => {
         getSearchResult,
         setCoinSearch,
         setSearchData,
+        currency,
+        setCurrency,
       }}
     >
       {children}
