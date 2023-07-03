@@ -15,12 +15,12 @@ const Pagination = () => {
           </button>
         </li>
         <li>
-          <button className="outline-0 hover:text-cyan rounded w-6 h-6 flex items-center justify-center text-lg">
+          <button className="outline-0 hover:text-cyan rounded w-7 h-7 flex items-center justify-center text-lg">
             ...
           </button>
         </li>
         <li>
-          <button className="outline-0 hover:text-cyan rounded-full w-6 h-6 flex items-center justify-center bg-gray-200 mx-1.5">
+          <button className="outline-0 hover:text-cyan rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5">
             1
           </button>
         </li>
@@ -30,17 +30,17 @@ const Pagination = () => {
           </button>
         </li>
         <li>
-          <button className="outline-0 hover:text-cyan rounded-full w-6 h-6 flex items-center justify-center bg-gray-200 mx-1.5">
+          <button className="outline-0 hover:text-cyan rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5">
             3
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-6 h-6 flex items-center justify-center text-lg">
+          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center text-lg">
             ...
           </button>
         </li>
         <li>
-          <button className="ouline-0 hover:text-cyan  rounded-full w-6 h-6 flex items-center justify-center bg-gray-200 mx-1.5">
+          <button className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5">
             100
           </button>
         </li>
