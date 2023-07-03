@@ -56,7 +56,7 @@ const Filters = () => {
           <select
             name="sortby"
             onClick={handleSort}
-            className="rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize focus:outline-0  cursor-pointer"
+            className="rounded text-gray-100 bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize focus:outline-0 cursor-pointer"
           >
             <option value="market_cap_desc">market cap desc</option>
             <option value="market_cap_asc">market cap asc</option>

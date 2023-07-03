@@ -107,11 +107,12 @@ const TableComponent = () => {
         ) : null}
       </div>
 
-      <div>
+      {/* ============= Pagination section ============= */}
+      <div className="flex items-center justify-between mt-4 capitalize h-[2rem]">
         <span>
           Data provided by{" "}
           <a
-            className="text-cyan"
+            className="text-cyan font-serif"
             href="http://www.coingecko.com"
             rel="noreferrer"
             target={"_blank"}
