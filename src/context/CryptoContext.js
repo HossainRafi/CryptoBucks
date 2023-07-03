@@ -10,6 +10,7 @@ export const CryptoProvider = ({ children }) => {
   const [searchData, setSearchData] = useState();
   const [coinSearch, setCoinSearch] = useState("");
   const [currency, setCurrency] = useState("usd");
+  const [sortBy, setSortBy] = useState("market_cap_desc");
 
   // ================ Get crypto data ===============
   const getCryptoData = async () => {
@@ -41,7 +42,7 @@ export const CryptoProvider = ({ children }) => {
 
   useLayoutEffect(() => {
     getCryptoData();
-  }, [coinSearch, currency]);
+  }, [coinSearch, currency, sortBy]);
 
   return (
     <CryptoContext.Provider
@@ -53,6 +54,8 @@ export const CryptoProvider = ({ children }) => {
         setSearchData,
         currency,
         setCurrency,
+        sortBy,
+        setSortBy,
       }}
     >
       {children}
