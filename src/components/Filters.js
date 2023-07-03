@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import submitIcon from "../assets/submit-icon.svg";
+import selectIcon from "../assets/select-icon.svg";
 import { useContext } from "react";
 import { CryptoContext } from "../context/CryptoContext";
 import { useRef } from "react";
@@ -47,7 +48,7 @@ const Filters = () => {
           <span className="font-bold mr-2">sort by: </span>
           <select
             name="sortby"
-            className="rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize focus:outline-0"
+            className="rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize focus:outline-0  cursor-pointer"
           >
             <option value="market_cap_desc">market cap desc</option>
             <option value="market_cap_asc">market cap asc</option>
@@ -58,6 +59,11 @@ const Filters = () => {
             <option value="gecko_desc">gecko desc</option>
             <option value="gecko_asc">gecko asc</option>
           </select>
+          <img
+            src={selectIcon}
+            alt="submit"
+            className="w-[1rem] h-auto absolute right-0 top-1 pointer-events-none"
+          />
         </label>
       </div>
     </div>
