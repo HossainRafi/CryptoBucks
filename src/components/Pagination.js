@@ -1,12 +1,33 @@
 import React from "react";
 import paginationArrow from "../assets/pagination-arrow.svg";
+import { useState } from "react";
 
 const Pagination = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const TotalNumber = 250;
+
+  const next = () => {
+    if (currentPage === TotalNumber) {
+      return null;
+    } else {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prev = () => {
+    if (currentPage === 1) {
+      return null;
+    } else {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   return (
     <div className="flex items-center">
       <ul className="flex items-center justify-end text-sm">
         <li className="flex items-center">
-          <button className="outline-0 hover:text-cyan w-6">
+          <button className="outline-0 hover:text-cyan w-6" onClick={prev}>
             <img
               className="w-full h-auto rotate-180"
               src={paginationArrow}
@@ -45,7 +66,7 @@ const Pagination = () => {
           </button>
         </li>
         <li className="flex items-center">
-          <button className="outline-0 hover:text-cyan w-6">
+          <button className="outline-0 hover:text-cyan w-6" onClick={next}>
             <img className="w-full h-auto" src={paginationArrow} alt="" />
           </button>
         </li>
