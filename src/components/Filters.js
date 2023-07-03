@@ -7,7 +7,7 @@ import { CryptoContext } from "../context/CryptoContext";
 import { useRef } from "react";
 
 const Filters = () => {
-  let { setCurrency } = useContext(CryptoContext);
+  let { setCurrency, setSortBy } = useContext(CryptoContext);
   const currencyRef = useRef(null);
 
   // =========== Currency submit function ===========
@@ -16,6 +16,13 @@ const Filters = () => {
     let val = currencyRef.current.value;
     setCurrency(val);
     currencyRef.current.value = "";
+  };
+
+  // ========= Get sort data =========
+  const handleSort = (e) => {
+    e.preventDefault();
+    let val = e.target.value;
+    setSortBy(val);
   };
 
   return (
@@ -48,6 +55,7 @@ const Filters = () => {
           <span className="font-bold mr-2">sort by: </span>
           <select
             name="sortby"
+            onClick={handleSort}
             className="rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize focus:outline-0  cursor-pointer"
           >
             <option value="market_cap_desc">market cap desc</option>
