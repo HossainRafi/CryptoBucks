@@ -95,14 +95,18 @@ const Pagination = () => {
             ...
           </button>
         </li>
-        <li>
-          <button
-            onClick={() => setCurrentPage(TotalNumber)}
-            className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
-          >
-            {TotalNumber}
-          </button>
-        </li>
+
+        {currentPage !== TotalNumber ? (
+          <li>
+            <button
+              onClick={() => setCurrentPage(TotalNumber)}
+              className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
+            >
+              {TotalNumber}
+            </button>
+          </li>
+        ) : null}
+
         <li className="flex items-center">
           <button className="outline-0 hover:text-cyan w-6" onClick={next}>
             <img className="w-full h-auto" src={paginationArrow} alt="" />
