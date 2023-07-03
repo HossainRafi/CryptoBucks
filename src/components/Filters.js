@@ -1,5 +1,6 @@
 import React from "react";
 import Search from "./Search";
+import submitIcon from "../assets/submit-icon.svg";
 
 const Filters = () => {
   return (
@@ -17,8 +18,11 @@ const Filters = () => {
             type="text"
             name="currency"
             placeholder="usd"
-            className="w-16 rounded bg-gray-200 placeholder:text-gray-100 pl-2 required outline-0 border border-transparent focus:border-cyan leading-4"/>
-          <button type="submit">submit</button>
+            className="w-16 rounded bg-gray-200 placeholder:text-gray-100 pl-2 required outline-0 border border-transparent focus:border-cyan leading-4"
+          />
+          <button type="submit" className="ml-1 cursor-pointer">
+            <img src={submitIcon} alt="submit" className="w-full h-auto" />
+          </button>
         </form>
       </div>
       <div>sorting</div>
