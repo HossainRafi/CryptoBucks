@@ -40,7 +40,7 @@ const PerPage = () => {
         min={1}
         max={250}
         ref={inputRef}
-        placeholder="10"
+        placeholder="05"
         className="w-16 rounded bg-gray-200 placeholder:text-gray-100
      pl-2 required outline-0 border border-transparent 
      focus:border-cyan leading-4
@@ -56,7 +56,7 @@ const PerPage = () => {
 const Pagination = () => {
   let { page, setPage, totalPages } = useContext(CryptoContext);
 
-  const TotalNumber = Math.ceil(totalPages / 10);
+  const TotalNumber = Math.ceil(totalPages / 5);
 
   // ========== Next btn functionality ===========
   const next = () => {
