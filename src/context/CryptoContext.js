@@ -11,6 +11,7 @@ export const CryptoProvider = ({ children }) => {
   const [coinSearch, setCoinSearch] = useState("");
   const [currency, setCurrency] = useState("usd");
   const [sortBy, setSortBy] = useState("market_cap_desc");
+  const [page, setPage] = useState(1);
 
   // ================ Get crypto data ===============
   const getCryptoData = async () => {
@@ -56,6 +57,8 @@ export const CryptoProvider = ({ children }) => {
         setCurrency,
         sortBy,
         setSortBy,
+        page,
+        setPage,
       }}
     >
       {children}
