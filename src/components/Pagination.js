@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import paginationArrow from "../assets/pagination-arrow.svg";
-import { useState } from "react";
+import { CryptoContext } from './../context/CryptoContext';
 
 const Pagination = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  let {page, setPage} = useContext(CryptoContext)
 
   const TotalNumber = 250;
 
