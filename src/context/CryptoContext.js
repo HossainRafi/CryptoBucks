@@ -43,7 +43,7 @@ export const CryptoProvider = ({ children }) => {
 
   useLayoutEffect(() => {
     getCryptoData();
-  }, [coinSearch, currency, sortBy]);
+  }, [coinSearch, currency, sortBy, page]);
 
   return (
     <CryptoContext.Provider
