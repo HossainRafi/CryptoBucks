@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import paginationArrow from "../assets/pagination-arrow.svg";
-import { CryptoContext } from './../context/CryptoContext';
+import { CryptoContext } from "./../context/CryptoContext";
 
 const Pagination = () => {
-  let {page, setPage} = useContext(CryptoContext)
+  let { page, setPage, totalPages } = useContext(CryptoContext);
 
-  const TotalNumber = 250;
+  const TotalNumber = Math.ceil(totalPages / 10);
 
   // ========== Next btn functionality ===========
   const next = () => {
