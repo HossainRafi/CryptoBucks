@@ -54,7 +54,11 @@ const TableComponent = () => {
                         src={data.image}
                         alt=""
                       />
-                      <span>{data.symbol}</span>
+                      <span>
+                        <Link to={`/${data.id}`} className="cursor-pointer">
+                          {data.symbol}
+                        </Link>
+                      </span>
                     </td>
                     <td className="py-4">
                       <Link to={`/${data.id}`} className="cursor-pointer">
