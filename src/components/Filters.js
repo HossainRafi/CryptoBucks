@@ -7,7 +7,7 @@ import { CryptoContext } from "../context/CryptoContext";
 import { useRef } from "react";
 
 const Filters = () => {
-  let { setCurrency, setSortBy } = useContext(CryptoContext);
+  let { setCurrency, setSortBy, resetFunction } = useContext(CryptoContext);
   const currencyRef = useRef(null);
 
   // =========== Currency submit function ===========
@@ -73,6 +73,10 @@ const Filters = () => {
             className="w-[1rem] h-auto absolute right-0 top-1 pointer-events-none"
           />
         </label>
+
+        <button className="w-[2rem] ml-4" onClick={resetFunction}>
+          reset
+        </button>
       </div>
     </div>
   );
