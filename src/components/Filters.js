@@ -70,7 +70,7 @@ const Filters = () => {
           <img
             src={selectIcon}
             alt="submit"
-            className="w-[1rem] h-auto absolute right-0 top-1 pointer-events-none"
+            className="w-[1rem] h-auto absolute right-0 top-2 pointer-events-none"
           />
         </label>
 
