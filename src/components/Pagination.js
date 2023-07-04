@@ -9,37 +9,37 @@ const Pagination = () => {
 
   // ========== Next btn functionality ===========
   const next = () => {
-    if (currentPage === TotalNumber) {
+    if (page === TotalNumber) {
       return null;
     } else {
-      setCurrentPage(currentPage + 1);
+      setPage(page + 1);
     }
   };
 
   // ========== Previus btn functionality ===========
   const prev = () => {
-    if (currentPage === 1) {
+    if (page === 1) {
       return null;
     } else {
-      setCurrentPage(currentPage - 1);
+      setPage(page - 1);
     }
   };
 
   // ========== Function for if user wants to go more than one page forward =============
   const multiStepNext = () => {
-    if (currentPage + 3 >= TotalNumber) {
-      setCurrentPage(TotalNumber - 1);
+    if (page + 3 >= TotalNumber) {
+      setPage(TotalNumber - 1);
     } else {
-      setCurrentPage(currentPage + 3);
+      setPage(page + 3);
     }
   };
 
   // ========== Function for if user wants to go more than one page backward =============
   const multiStepPrev = () => {
-    if (currentPage - 3 <= 1) {
-      setCurrentPage(TotalNumber + 1);
+    if (page - 3 <= 1) {
+      setPage(TotalNumber + 1);
     } else {
-      setCurrentPage(currentPage - 2);
+      setPage(page - 2);
     }
   };
 
@@ -56,7 +56,7 @@ const Pagination = () => {
           </button>
         </li>
 
-        {currentPage + 1 === TotalNumber || currentPage === TotalNumber ? (
+        {page + 1 === TotalNumber || page === TotalNumber ? (
           <li>
             <button
               onClick={multiStepPrev}
@@ -67,13 +67,13 @@ const Pagination = () => {
           </li>
         ) : null}
 
-        {currentPage - 1 !== 0 ? (
+        {page - 1 !== 0 ? (
           <li>
             <button
               onClick={prev}
               className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
             >
-              {currentPage - 1}
+              {page - 1}
             </button>
           </li>
         ) : null}
@@ -83,22 +83,22 @@ const Pagination = () => {
             disabled
             className="ouline-0  rounded-full w-7 h-7 flex items-center justify-center bg-cyan text-gray-300 mx-1.5 font-bold"
           >
-            {currentPage}
+            {page}
           </button>
         </li>
 
-        {currentPage + 1 !== TotalNumber && currentPage !== TotalNumber ? (
+        {page + 1 !== TotalNumber && page !== TotalNumber ? (
           <li>
             <button
               onClick={next}
               className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
             >
-              {currentPage + 1}
+              {page + 1}
             </button>
           </li>
         ) : null}
 
-        {currentPage + 1 !== TotalNumber && currentPage !== TotalNumber ? (
+        {page + 1 !== TotalNumber && page !== TotalNumber ? (
           <li>
             <button
               onClick={multiStepNext}
@@ -109,10 +109,10 @@ const Pagination = () => {
           </li>
         ) : null}
 
-        {currentPage !== TotalNumber ? (
+        {page !== TotalNumber ? (
           <li>
             <button
-              onClick={() => setCurrentPage(TotalNumber)}
+              onClick={() => setPage(TotalNumber)}
               className="ouline-0 hover:text-cyan  rounded-full w-7 h-7 flex items-center justify-center bg-gray-200 mx-1.5 font-bold"
             >
               {TotalNumber}
