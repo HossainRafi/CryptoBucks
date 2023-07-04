@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Crypto from './pages/Crypto';
 import Trending from './pages/Trending';
 import Saved from './pages/Saved';
+import CryptoDetails from './components/CryptoDetails';
 
 
 // ================== React Router Pages ===================
@@ -15,20 +16,26 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    children:[
+    children: [
       {
-        path:'/',
-        element:<Crypto/>
+        path: "/",
+        element: <Crypto />,
+        children: [
+          {
+            path: ":coinId",
+            element: <CryptoDetails />,
+          },
+        ],
       },
       {
-        path:'/trending',
-        element:<Trending/>
+        path: "/trending",
+        element: <Trending />,
       },
       {
-        path:'/saved',
-        element:<Saved/>
+        path: "/saved",
+        element: <Saved />,
       },
-    ]
+    ],
   },
 ]);
 
