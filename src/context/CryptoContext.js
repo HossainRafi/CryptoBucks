@@ -13,6 +13,7 @@ export const CryptoProvider = ({ children }) => {
   const [sortBy, setSortBy] = useState("market_cap_desc");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(250);
+  const [perPage, setPerPage] = useState(10);
 
   // ================ Get crypto data ===============
   const getCryptoData = async () => {
@@ -27,7 +28,7 @@ export const CryptoProvider = ({ children }) => {
 
     try {
       const data = await fetch(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${coinSearch}&order=${sortBy}&per_page=10&page=${page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${coinSearch}&order=${sortBy}&per_page=${perPage}&page=${page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
       )
         .then((res) => res.json())
         .then((json) => json);
@@ -59,7 +60,8 @@ export const CryptoProvider = ({ children }) => {
 
   useLayoutEffect(() => {
     getCryptoData();
-  }, [coinSearch, currency, sortBy, page]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [coinSearch, currency, sortBy, page, perPage]);
 
   return (
     <CryptoContext.Provider
@@ -77,6 +79,7 @@ export const CryptoProvider = ({ children }) => {
         setPage,
         totalPages,
         resetFunction,
+        setPerPage,
       }}
     >
       {children}
