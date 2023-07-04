@@ -51,6 +51,12 @@ export const CryptoProvider = ({ children }) => {
     }
   };
 
+  // ============= Function for reset data =============
+  const resetFunction = () => {
+    setPage(1);
+    setCoinSearch("");
+  };
+
   useLayoutEffect(() => {
     getCryptoData();
   }, [coinSearch, currency, sortBy, page]);
@@ -70,6 +76,7 @@ export const CryptoProvider = ({ children }) => {
         page,
         setPage,
         totalPages,
+        resetFunction,
       }}
     >
       {children}
