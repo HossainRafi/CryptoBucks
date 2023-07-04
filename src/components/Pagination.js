@@ -54,9 +54,9 @@ const PerPage = () => {
 };
 
 const Pagination = () => {
-  let { page, setPage, totalPages } = useContext(CryptoContext);
+  let { page, setPage, totalPages, perPage } = useContext(CryptoContext);
 
-  const TotalNumber = Math.ceil(totalPages / 5);
+  const TotalNumber = Math.ceil(totalPages / perPage);
 
   // ========== Next btn functionality ===========
   const next = () => {

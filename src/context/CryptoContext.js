@@ -80,6 +80,7 @@ export const CryptoProvider = ({ children }) => {
         totalPages,
         resetFunction,
         setPerPage,
+        perPage
       }}
     >
       {children}
