@@ -12,16 +12,15 @@ export const CryptoProvider = ({ children }) => {
   const [currency, setCurrency] = useState("usd");
   const [sortBy, setSortBy] = useState("market_cap_desc");
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(250);
 
   // ================ Get crypto data ===============
   const getCryptoData = async () => {
     try {
-      const data = await fetch(
-        `https://api.coingecko.com/api/v3/coins/list`
-      )
+      const data = await fetch(`https://api.coingecko.com/api/v3/coins/list`)
         .then((res) => res.json())
         .then((json) => json);
-        console.log(data)
+      setTotalPages(data.length);
     } catch (error) {
       console.log(error);
     }
@@ -70,6 +69,7 @@ export const CryptoProvider = ({ children }) => {
         setSortBy,
         page,
         setPage,
+        totalPages,
       }}
     >
       {children}
