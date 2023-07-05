@@ -161,10 +161,8 @@ const CryptoDetails = () => {
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency,
-                      notation: "compact",
-                    }).format(
-                      data.market_data.high_24h[currency]
-                    )}
+                      minimumFractionDigits: 5,
+                    }).format(data.market_data.high_24h[currency])}
                   </h2>
                 </div>
               </div>
