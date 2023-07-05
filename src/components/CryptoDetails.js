@@ -123,6 +123,19 @@ const CryptoDetails = () => {
                   </h2>
                 </div>
               </div>
+              
+              <div>
+                <span>
+                  total volume
+                </span>
+                <h2>
+                  {new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: currency,
+                    minimumFractionDigits: 0,
+                  }).format(data.market_data.total_volume[currency])}
+                </h2>
+              </div>
             </div>
             <div className="flex flex-col w-[55%] h-full pl-3">right</div>
           </div>
