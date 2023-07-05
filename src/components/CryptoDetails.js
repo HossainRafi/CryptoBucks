@@ -123,12 +123,12 @@ const CryptoDetails = () => {
                   </h2>
                 </div>
               </div>
-              
-              <div>
-                <span>
+
+              <div className="flex flex-col w-full mt-4 justify-between">
+                <span className="text-sm capitalize text-gray-100">
                   total volume
                 </span>
-                <h2>
+                <h2 className="text-base font-bold">
                   {new Intl.NumberFormat("en-IN", {
                     style: "currency",
                     currency: currency,
@@ -136,6 +136,12 @@ const CryptoDetails = () => {
                   }).format(data.market_data.total_volume[currency])}
                 </h2>
               </div>
+
+              <div className="flex w-full mt-4 justify-between">
+                indicator
+              </div>
+
+              
             </div>
             <div className="flex flex-col w-[55%] h-full pl-3">right</div>
           </div>
