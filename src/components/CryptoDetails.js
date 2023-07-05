@@ -60,6 +60,7 @@ const CryptoDetails = () => {
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency,
+                      maximumSignificantDigits: 5,
                     }).format(data.market_data.current_price[currency])}
                   </h2>
                 </div>
