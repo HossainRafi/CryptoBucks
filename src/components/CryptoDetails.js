@@ -81,7 +81,7 @@ const CryptoDetails = () => {
                       </svg>
                     </div>
                   </div>
-                  <h2>
+                  <h2 className="text-lg font-bold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency,
