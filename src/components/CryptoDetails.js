@@ -94,9 +94,11 @@ const CryptoDetails = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="flex w-full mt-4 justify-between">
                 <div>
-                  <span>Market Cap</span>
+                  <span>
+                    Market Cap
+                  </span>
                   <h2>
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
