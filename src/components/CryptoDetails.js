@@ -30,9 +30,9 @@ const CryptoDetails = () => {
       >
         {data ? (
           <div className="flex items-center justify-between h-full w-full p-4">
-            <div className="flex flex-col w-[45%] h-full pr-2">left</div>
+            <div className="flex flex-col w-[45%] h-full pr-2 ">left</div>
 
-            <div>right</div>
+            <div className="flex flex-col w-[55%] h-full pl-3">right</div>
           </div>
         ) : null}
       </div>
