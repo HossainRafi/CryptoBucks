@@ -31,9 +31,11 @@ const CryptoDetails = () => {
         {data ? (
           <div className="flex items-center justify-between h-full w-full p-4">
             <div className="flex flex-col w-[45%] h-full pr-2 ">
-              <img src={data.image.large} alt="" />
-              <h1>{data.name}</h1>
-              <span>{data.symbol}</span>
+              <div className="flex w-full items-center">
+                <img className="w-[3rem] h-[3rem] mr-1.5" src={data.image.large} alt="" />
+                <h1 className="">{data.name}</h1>
+                <span>{data.symbol}</span>
+              </div>
             </div>
 
             <div className="flex flex-col w-[55%] h-full pl-3">right</div>
