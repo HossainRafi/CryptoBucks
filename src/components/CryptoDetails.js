@@ -99,11 +99,11 @@ const CryptoDetails = () => {
                   <span className="text-sm capitalize text-gray-100">
                     Market Cap
                   </span>
-                  <h2>
+                  <h2 className="text-base font-bold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency,
-                      maximumSignificantDigits: 5,
+                      minimumFractionDigits: 0,
                     }).format(data.market_data.market_cap[currency])}
                   </h2>
                 </div>
