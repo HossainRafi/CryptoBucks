@@ -8,7 +8,7 @@ import { CryptoContext } from "./../context/CryptoContext";
 const CryptoDetails = () => {
   let { coinId } = useParams();
   let navigate = useNavigate();
-  let { getCoinData, coinData: data } = useContext(CryptoContext);
+  let { getCoinData, coinData: data, currency } = useContext(CryptoContext);
 
   useLayoutEffect(() => {
     getCoinData(coinId);
@@ -48,9 +48,20 @@ const CryptoDetails = () => {
                   <div>
                     <span>Price</span>
                     <div>
-                      <span>{Number(data.market_data.price_change_percentage_24h).toFixed(2)}%</span>
+                      <span>
+                        {Number(
+                          data.market_data.price_change_percentage_24h
+                        ).toFixed(2)}
+                        %
+                      </span>
                     </div>
                   </div>
+                  <h2>
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: currency,
+                    }).format(data.market_data.current_price[currency])}
+                  </h2>
                 </div>
               </div>
             </div>
