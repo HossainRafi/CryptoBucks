@@ -8,7 +8,7 @@ import { CryptoContext } from "./../context/CryptoContext";
 const CryptoDetails = () => {
   let { coinId } = useParams();
   let navigate = useNavigate();
-  let { getCoinData, coinData:data } = useContext(CryptoContext);
+  let { getCoinData, coinData: data } = useContext(CryptoContext);
 
   useLayoutEffect(() => {
     getCoinData(coinId);
@@ -28,14 +28,13 @@ const CryptoDetails = () => {
         className="w-[65%] h-[75%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative"
         onClick={(e) => e.stopPropagation()}
       >
-        {data ? 
-        
-        <div className="flex items-center justify-between h-full w-full p-4">
+        {data ? (
+          <div className="flex items-center justify-between h-full w-full p-4">
+            <div className="flex flex-col w-[45%] h-full pr-2">left</div>
 
-
-        </div>
-        
-        : null}
+            <div>right</div>
+          </div>
+        ) : null}
       </div>
     </div>,
     document.getElementById("model")
