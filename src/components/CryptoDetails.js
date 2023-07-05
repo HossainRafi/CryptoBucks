@@ -43,12 +43,14 @@ const CryptoDetails = () => {
                   {data.symbol}
                 </span>
               </div>
+
               <div className="flex w-full mt-6">
                 <div className="flex flex-col w-full">
                   <div className="flex justify-between">
                     <span className="text-sm capitalize text-gray-100">
                       Price
                     </span>
+
                     <div
                       className={`text-sm px-1 ml-2 font-medium flex items-center rounded uppercase bg-opacity-25 ${
                         data.market_data.price_change_percentage_24h > 0
@@ -81,12 +83,39 @@ const CryptoDetails = () => {
                       </svg>
                     </div>
                   </div>
+
                   <h2 className="text-lg font-bold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency,
                       maximumSignificantDigits: 5,
                     }).format(data.market_data.current_price[currency])}
+                  </h2>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <span>Market Cap</span>
+                  <h2>
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: currency,
+                      maximumSignificantDigits: 5,
+                    }).format(data.market_data.market_cap[currency])}
+                  </h2>
+                </div>
+
+                <div>
+                  <span>fully diluted valuation</span>
+                  <h2>
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: currency,
+                      maximumSignificantDigits: 5,
+                    }).format(
+                      data.market_data.fully_diluted_valuation[currency]
+                    )}
                   </h2>
                 </div>
               </div>
