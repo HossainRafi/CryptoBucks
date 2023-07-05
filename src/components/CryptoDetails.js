@@ -42,6 +42,17 @@ const CryptoDetails = () => {
                   {data.symbol}
                 </span>
               </div>
+
+              <div>
+                <div>
+                  <div>
+                    <span>Price</span>
+                    <div>
+                      <span>{Number(data.market_data.price_change_percentage_24h).toFixed(2)}%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col w-[55%] h-full pl-3">right</div>
