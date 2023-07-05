@@ -12,6 +12,7 @@ const CryptoDetails = () => {
 
   useLayoutEffect(() => {
     getCoinData(coinId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coinId]);
 
   // ========== Close popup =========
@@ -42,7 +43,6 @@ const CryptoDetails = () => {
                   {data.symbol}
                 </span>
               </div>
-
               <div className="flex w-full mt-6">
                 <div className="flex flex-col w-full">
                   <div className="flex justify-between">
@@ -50,13 +50,11 @@ const CryptoDetails = () => {
                       Price
                     </span>
                     <div
-                      className={`text-sm px-1 ml-2 font-medium flex items-center rounded uppercase bg-opacity-25
-          ${
-            data.market_data.price_change_percentage_24h > 0
-              ? "bg-green text-green"
-              : "bg-red text-red"
-          }
-          `}
+                      className={`text-sm px-1 ml-2 font-medium flex items-center rounded uppercase bg-opacity-25 ${
+                        data.market_data.price_change_percentage_24h > 0
+                          ? "bg-green text-green"
+                          : "bg-red text-red"
+                      }`}
                     >
                       <span>
                         {Number(
@@ -76,7 +74,6 @@ const CryptoDetails = () => {
                 </div>
               </div>
             </div>
-
             <div className="flex flex-col w-[55%] h-full pl-3">right</div>
           </div>
         ) : null}
