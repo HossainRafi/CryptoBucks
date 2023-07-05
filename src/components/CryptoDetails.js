@@ -32,9 +32,15 @@ const CryptoDetails = () => {
           <div className="flex items-center justify-between h-full w-full p-4">
             <div className="flex flex-col w-[45%] h-full pr-2 ">
               <div className="flex w-full items-center">
-                <img className="w-[3rem] h-[3rem] mr-1.5" src={data.image.large} alt="" />
-                <h1 className="">{data.name}</h1>
-                <span>{data.symbol}</span>
+                <img
+                  className="w-[3rem] h-[3rem] mr-1.5"
+                  src={data.image.large}
+                  alt=""
+                />
+                <h1 className="text-xl capitalize font-medium">{data.name}</h1>
+                <span className="text-sm py-0.5 px-2.5 ml-2 bg-cyan text-cyan bg-opacity-25 rounded uppercase">
+                  {data.symbol}
+                </span>
               </div>
             </div>
 
