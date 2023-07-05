@@ -95,8 +95,8 @@ const CryptoDetails = () => {
               </div>
 
               <div className="flex w-full mt-4 justify-between">
-                <div>
-                  <span>
+                <div className="flex flex-col">
+                  <span className="text-sm capitalize text-gray-100">
                     Market Cap
                   </span>
                   <h2>
