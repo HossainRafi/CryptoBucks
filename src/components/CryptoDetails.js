@@ -148,8 +148,23 @@ const CryptoDetails = () => {
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency,
-                      minimumFractionDigits: 0,
+                      minimumFractionDigits: 5,
                     }).format(data.market_data.low_24h[currency])}
+                  </h2>
+                </div>
+
+                <div className="flex flex-col">
+                  <span className="text-sm capitalize text-gray-100">
+                    high 24h
+                  </span>
+                  <h2 className="text-base font-bold">
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: currency,
+                      notation: "compact",
+                    }).format(
+                      data.market_data.high_24h[currency]
+                    )}
                   </h2>
                 </div>
               </div>
