@@ -43,9 +43,9 @@ const CryptoDetails = () => {
                 </span>
               </div>
 
-              <div>
-                <div>
-                  <div>
+              <div className="flex w-full mt-6">
+                <div className="flex flex-col w-full">
+                  <div className="flex justify-between">
                     <span>Price</span>
                     <div>
                       <span>
