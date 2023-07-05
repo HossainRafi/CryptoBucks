@@ -166,6 +166,21 @@ const CryptoDetails = () => {
                   </h2>
                 </div>
               </div>
+
+              <div className="flex w-full mt-4 justify-between">
+                <div className="flex flex-col">
+                  <span className="text-sm capitalize text-gray-100">
+                    max supply
+                  </span>
+                  <h2 className="text-base font-bold">
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: currency,
+                      minimumFractionDigits: 0,
+                    }).format(data.market_data.msx_supply)}
+                  </h2>
+                </div>
+              </div>
             </div>
             <div className="flex flex-col w-[55%] h-full pl-3">right</div>
           </div>
