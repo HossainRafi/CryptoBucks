@@ -137,11 +137,22 @@ const CryptoDetails = () => {
                 </h2>
               </div>
 
-              <div className="flex w-full mt-4 justify-between">
-                indicator
-              </div>
+              <div className="flex w-full mt-4 justify-between">indicator</div>
 
-              
+              <div className="flex w-full mt-4 justify-between">
+                <div className="flex flex-col">
+                  <span className="text-sm capitalize text-gray-100">
+                    Low 24H
+                  </span>
+                  <h2 className="text-base font-bold">
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: currency,
+                      minimumFractionDigits: 0,
+                    }).format(data.market_data.low_24h[currency])}
+                  </h2>
+                </div>
+              </div>
             </div>
             <div className="flex flex-col w-[55%] h-full pl-3">right</div>
           </div>
