@@ -108,13 +108,15 @@ const CryptoDetails = () => {
                   </h2>
                 </div>
 
-                <div>
-                  <span>fully diluted valuation</span>
-                  <h2>
+                <div className="flex flex-col">
+                  <span className="text-sm capitalize text-gray-100">
+                    fully diluted valuation
+                  </span>
+                  <h2 className="text-base font-bold">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: currency,
-                      maximumSignificantDigits: 5,
+                      notation: "compact",
                     }).format(
                       data.market_data.fully_diluted_valuation[currency]
                     )}
