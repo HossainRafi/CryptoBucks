@@ -194,6 +194,17 @@ const CryptoDetails = () => {
                   </h2>
                 </div>
               </div>
+
+              <div className="flex w-full mt-4 justify-between">
+                <div className="flx flex-col">
+                  <a href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                </div>
+                <div className="flex flex-col content-start">
+                  <span>sentiment</span>
+                </div>
+              </div>
             </div>
             <div className="flex flex-col w-[55%] h-full pl-3">right</div>
           </div>
