@@ -177,7 +177,7 @@ const CryptoDetails = () => {
                       style: "currency",
                       currency: currency,
                       minimumFractionDigits: 0,
-                    }).format(data.market_data.msx_supply)}
+                    }).format(data.market_data.max_supply)}
                   </h2>
                 </div>
               </div>
