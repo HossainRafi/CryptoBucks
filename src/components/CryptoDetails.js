@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { CryptoContext } from "./../context/CryptoContext";
 import { useState } from "react";
 import { useEffect } from "react";
+import Chart from "./Chart";
 
 const HighLowIndicator = ({ currentPrice, high, low }) => {
   const [green, setGreen] = useState();
@@ -322,7 +323,11 @@ const CryptoDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col w-[55%] h-full pl-3">right</div>
+
+            {/* =========== Right data section =========== */}
+            <div className="flex flex-col w-[55%] h-full pl-3">
+              <Chart id={data.id} />
+            </div>
           </div>
         ) : null}
       </div>
