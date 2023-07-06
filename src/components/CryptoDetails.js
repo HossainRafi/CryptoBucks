@@ -5,10 +5,16 @@ import { useLayoutEffect } from "react";
 import { useContext } from "react";
 import { CryptoContext } from "./../context/CryptoContext";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const HighLowIndicator = ({ currentPrice, high, low }) => {
   const [green, setGreen] = useState();
 
+  useEffect(() => {
+    let total = high - low;
+    let greenZone = ((high - currentPrice) * 100) / total;
+    setGreen(Math.ceil(greenZone));
+  }, [currentPrice, high, low]);
 
   return (
     <>
