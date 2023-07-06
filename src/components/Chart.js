@@ -106,7 +106,11 @@ const Chart = ({ id }) => {
           price
         </button>
         <button
-          className="text-sm py-0.5 px-1.5 ml-2"
+          className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
+            type === "market_caps"
+              ? "bg-cyan text-cyan"
+              : "bg-gray-200 text-gray-100"
+          }`}
           onClick={() => setType("market_caps")}
         >
           market cap
