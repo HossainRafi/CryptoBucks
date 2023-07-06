@@ -1,6 +1,4 @@
-import React from "react";
-import { useContext } from "react";
-import { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import {
   LineChart,
   Line,
@@ -11,8 +9,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { CryptoContext } from "../context/CryptoContext";
+import { useContext } from "react";
+import { CryptoContext } from "./../context/CryptoContext";
 
+// ========== Tooltip customization function ===========
 function CustomTooltip({ payload, label, active, currency = "usd" }) {
   if (active && payload && payload.length > 0) {
     return (
@@ -32,16 +32,17 @@ function CustomTooltip({ payload, label, active, currency = "usd" }) {
   return null;
 }
 
+// ================ Main Chart ===============
 const ChartComponent = ({ data, currency, type }) => {
   return (
     <ResponsiveContainer height={"90%"}>
       <LineChart width={400} height={400} data={data}>
-        <CartesianGrid stroke="#323232" cursor="pointer" />
+        <CartesianGrid stroke="#323232" />
         <Line
           type="monotone"
           dataKey={type}
           stroke="#14ffec"
-          strokeWidth={"2px"}
+          strokeWidth={"1px"}
         />
         <XAxis dataKey="date" hide />
         <YAxis dataKey={type} hide domain={["auto", "auto"]} />
@@ -57,7 +58,9 @@ const ChartComponent = ({ data, currency, type }) => {
   );
 };
 
+// =============== Chart component ===============
 const Chart = ({ id }) => {
+  // ========== Necessary states & variables ===========
   let { currency } = useContext(CryptoContext);
   const [chartData, setChartData] = useState();
   const [type, setType] = useState("prices");
@@ -93,7 +96,10 @@ const Chart = ({ id }) => {
 
   return (
     <div className="w-full h-[60%]">
+      {/* ==== ChartComponent ==== */}
       <ChartComponent data={chartData} currency={currency} type={type} />
+
+      {/* ============ Buttons for changing value based on topics & dates ============ */}
       <div className="flex">
         <button
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
