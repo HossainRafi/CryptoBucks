@@ -61,7 +61,7 @@ const Chart = ({ id }) => {
   let { currency } = useContext(CryptoContext);
   const [chartData, setChartData] = useState();
   const [type, setType] = useState("prices");
-  const [days, setDays] = useState(14);
+  const [days, setDays] = useState(30);
 
   useLayoutEffect(() => {
     const getChartData = async (id) => {
@@ -95,13 +95,47 @@ const Chart = ({ id }) => {
     <div className="w-full h-[60%]">
       <ChartComponent data={chartData} currency={currency} type={type} />
       <div className="flex">
-        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setType("prices")}>price</button>
-        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setType("market_caps")}>market cap</button>
-        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setType("total_volumes")}>total volumes</button>
+        <button
+          className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
+            type === "prices"
+              ? "bg-cyan text-cyan"
+              : "bg-gray-200 text-gray-100"
+          }`}
+          onClick={() => setType("prices")}
+        >
+          price
+        </button>
+        <button
+          className="text-sm py-0.5 px-1.5 ml-2"
+          onClick={() => setType("market_caps")}
+        >
+          market cap
+        </button>
+        <button
+          className="text-sm py-0.5 px-1.5 ml-2"
+          onClick={() => setType("total_volumes")}
+        >
+          total volumes
+        </button>
 
-        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setDays("7")}>7d</button>
-        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setDays("14")}>14d</button>
-        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setDays("30")}>30d</button>
+        <button
+          className="text-sm py-0.5 px-1.5 ml-2"
+          onClick={() => setDays("7")}
+        >
+          7d
+        </button>
+        <button
+          className="text-sm py-0.5 px-1.5 ml-2"
+          onClick={() => setDays("14")}
+        >
+          14d
+        </button>
+        <button
+          className="text-sm py-0.5 px-1.5 ml-2"
+          onClick={() => setDays("30")}
+        >
+          30d
+        </button>
       </div>
     </div>
   );
