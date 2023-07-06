@@ -143,8 +143,10 @@ const Chart = ({ id }) => {
           14d
         </button>
         <button
-          className="text-sm py-0.5 px-1.5 ml-2"
-          onClick={() => setDays("30")}
+          className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
+            days === 30 ? "bg-cyan text-cyan" : "bg-gray-200 text-gray-100"
+          }`}
+          onClick={() => setDays(30)}
         >
           30d
         </button>
