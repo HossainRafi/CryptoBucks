@@ -32,19 +32,19 @@ function CustomTooltip({ payload, label, active, currency = "usd" }) {
   return null;
 }
 
-const ChartComponent = ({ data, currency }) => {
+const ChartComponent = ({ data, currency, type }) => {
   return (
     <ResponsiveContainer height={"90%"}>
       <LineChart width={400} height={400} data={data}>
+        <CartesianGrid stroke="#323232" cursor="pointer" />
         <Line
           type="monotone"
-          dataKey="prices"
+          dataKey={type}
           stroke="#14ffec"
-          strokeWidth={"1px"}
+          strokeWidth={"2px"}
         />
-        <CartesianGrid stroke="#323232" />
         <XAxis dataKey="date" hide />
-        <YAxis dataKey={"prices"} hide domain={["auto", "auto"]} />
+        <YAxis dataKey={type} hide domain={["auto", "auto"]} />
         <Tooltip
           content={<CustomTooltip />}
           currency={currency}
@@ -60,6 +60,7 @@ const ChartComponent = ({ data, currency }) => {
 const Chart = ({ id }) => {
   const [chartData, setChartData] = useState();
   let { currency } = useContext(CryptoContext);
+  const [type, setType] = useState("prices");
 
   useLayoutEffect(() => {
     const getChartData = async (id) => {
@@ -72,10 +73,10 @@ const Chart = ({ id }) => {
 
         console.log("chart-data", data);
 
-        let convertedData = data.prices.map((item) => {
+        let convertedData = data[type].map((item) => {
           return {
             date: new Date(item[0]).toLocaleDateString(),
-            prices: item[1],
+            [type]: item[1],
           };
         });
         console.log(convertedData);
@@ -90,7 +91,7 @@ const Chart = ({ id }) => {
 
   return (
     <div className="w-full h-[60%]">
-      <ChartComponent data={chartData} currency={currency} />
+      <ChartComponent data={chartData} currency={currency} type={type} />
     </div>
   );
 };
