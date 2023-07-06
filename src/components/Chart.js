@@ -7,22 +7,27 @@ import {
   YAxis,
   Tooltip,
   CartesianGrid,
+  Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 const ChartComponent = ({ data }) => {
   return (
-    <LineChart width={400} height={400} data={data}>
-      <CartesianGrid stroke="#ccc" />
-      <Line
-        type="monotone"
-        dataKey="prices"
-        stroke="#14ffec"
-        strokeWidth={"1px"}
-      />
-      <XAxis dataKey="date" />
-      <YAxis />
-      <Tooltip />
-    </LineChart>
+    <ResponsiveContainer height={"90%"}>
+      <LineChart width={400} height={400} data={data}>
+        <CartesianGrid stroke="#ccc" />
+        <Line
+          type="monotone"
+          dataKey="prices"
+          stroke="#14ffec"
+          strokeWidth={"1px"}
+        />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+      </LineChart>
+    </ResponsiveContainer>
   );
 };
 
@@ -57,7 +62,7 @@ const Chart = ({ id }) => {
   }, [id]);
 
   return (
-    <div>
+    <div className="w-full h-[60%]">
       <ChartComponent data={chartData} />
     </div>
   );
