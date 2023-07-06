@@ -27,10 +27,10 @@ const CryptoDetails = () => {
   return ReactDOM.createPortal(
     <div
       onClick={close}
-      className="fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 first-letter: backdrop-blur-sm flex items-center justify-center font-nunito"
+      className="fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 first-letter: backdrop-blur-sm flex items-center justify-center font-nunito cursor-pointer"
     >
       <div
-        className="w-[65%] h-[80%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative"
+        className="w-[65%] h-[80%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative cursor-default"
         onClick={(e) => e.stopPropagation()}
       >
         {data ? (
@@ -142,7 +142,11 @@ const CryptoDetails = () => {
               </div>
 
               <div className="flex w-full mt-4 justify-between">
-                <HighLowIndicator />
+                <HighLowIndicator
+                  currentPrice={data.market_data.current_price[currency]}
+                  high={data.market_data.high_24h[currency]}
+                  low={data.market_data.low_24h[currency]}
+                />
               </div>
 
               <div className="flex w-full mt-4 justify-between">
