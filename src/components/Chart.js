@@ -1,16 +1,11 @@
 import React from "react";
 import { useLayoutEffect, useState } from "react";
-
 import { LineChart, Line } from "recharts";
-const data = [
-  { name: "Page A", uv: 400, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 100, pv: 2400, amt: 2400 },
-];
 
-const ChartComponent = () => {
+const ChartComponent = ({ data }) => {
   return (
     <LineChart width={400} height={400} data={data}>
-      <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+      <Line type="monotone" dataKey="prices" stroke="#8884d8" />
     </LineChart>
   );
 };
@@ -36,7 +31,7 @@ const Chart = ({ id }) => {
           };
         });
         console.log(convertedData);
-        setChartData(data);
+        setChartData(convertedData);
       } catch (error) {
         console.log(error);
       }
@@ -47,7 +42,7 @@ const Chart = ({ id }) => {
 
   return (
     <div>
-      <ChartComponent />
+      <ChartComponent data={chartData} />
     </div>
   );
 };
