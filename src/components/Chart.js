@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import { useLayoutEffect, useState } from "react";
 import {
   LineChart,
@@ -10,8 +11,28 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { CryptoContext } from "../context/CryptoContext";
 
-const ChartComponent = ({ data }) => {
+function CustomTooltip({ payload, label, active, currency = "usd" }) {
+  if (active && payload && payload.length > 0) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label text-sm text-cyan">{`${label} : ${new Intl.NumberFormat(
+          "en-IN",
+          {
+            style: "currency",
+            currency: currency,
+            minimumFractionDigits: 5,
+          }
+        ).format(payload[0].value)}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+}
+
+const ChartComponent = ({ data, currency }) => {
   return (
     <ResponsiveContainer height={"90%"}>
       <LineChart width={400} height={400} data={data}>
@@ -24,7 +45,12 @@ const ChartComponent = ({ data }) => {
         <CartesianGrid stroke="#323232" />
         <XAxis dataKey="date" hide />
         <YAxis dataKey={"prices"} hide domain={["auto", "auto"]} />
-        <Tooltip />
+        <Tooltip
+          content={<CustomTooltip />}
+          currency={currency}
+          cursor={false}
+          wrapperStyle={{ outline: "none" }}
+        />
         <Legend />
       </LineChart>
     </ResponsiveContainer>
@@ -33,6 +59,7 @@ const ChartComponent = ({ data }) => {
 
 const Chart = ({ id }) => {
   const [chartData, setChartData] = useState();
+  let { currency } = useContext(CryptoContext);
 
   useLayoutEffect(() => {
     const getChartData = async (id) => {
@@ -63,7 +90,7 @@ const Chart = ({ id }) => {
 
   return (
     <div className="w-full h-[60%]">
-      <ChartComponent data={chartData} />
+      <ChartComponent data={chartData} currency={currency} />
     </div>
   );
 };
