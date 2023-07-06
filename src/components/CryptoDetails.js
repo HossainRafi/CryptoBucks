@@ -329,22 +329,22 @@ const CryptoDetails = () => {
               <Chart id={data.id} />
 
               <div className="flex flex-col mt-4">
-                <h3>
-                  <span>
+                <h3 className="text-white py-1">
+                  <span className="text-gray-100 capitalize mr-1">
                     market cap rank:{" "}
                   </span>{" "}
                   {data.market_cap_rank}{" "}
                 </h3>
 
-                <h3>
-                  <span>
+                <h3 className="text-white py-1">
+                  <span className="text-gray-100 capitalize mr-1">
                     coinGecko rank:{" "}
                   </span>{" "}
                   {data.coingecko_rank}{" "}
                 </h3>
 
-                <h3>
-                  <span>
+                <h3 className="text-white py-1">
+                  <span className="text-gray-100 capitalize mr-1">
                     coinGecko score:{" "}
                   </span>{" "}
                   {data.coingecko_score}{" "}
