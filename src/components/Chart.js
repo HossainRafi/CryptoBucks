@@ -1,11 +1,27 @@
 import React from "react";
 import { useLayoutEffect, useState } from "react";
-import { LineChart, Line } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+} from "recharts";
 
 const ChartComponent = ({ data }) => {
   return (
     <LineChart width={400} height={400} data={data}>
-      <Line type="monotone" dataKey="prices" stroke="#8884d8" />
+      <CartesianGrid stroke="#ccc" />
+      <Line
+        type="monotone"
+        dataKey="prices"
+        stroke="#14ffec"
+        strokeWidth={"1px"}
+      />
+      <XAxis dataKey="date" />
+      <YAxis />
+      <Tooltip />
     </LineChart>
   );
 };
