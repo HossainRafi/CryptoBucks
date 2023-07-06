@@ -5,6 +5,10 @@ import { useLayoutEffect } from "react";
 import { useContext } from "react";
 import { CryptoContext } from "./../context/CryptoContext";
 
+const HighLowIndicator = ({ currentPrice, high, low }) => {
+  return <span>indicator.......</span>;
+};
+
 const CryptoDetails = () => {
   let { coinId } = useParams();
   let navigate = useNavigate();
@@ -137,7 +141,9 @@ const CryptoDetails = () => {
                 </h2>
               </div>
 
-              <div className="flex w-full mt-4 justify-between">indicator</div>
+              <div className="flex w-full mt-4 justify-between">
+                <HighLowIndicator />
+              </div>
 
               <div className="flex w-full mt-4 justify-between">
                 <div className="flex flex-col">
