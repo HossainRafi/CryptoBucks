@@ -58,50 +58,50 @@ const ChartComponent = ({ data, currency, type }) => {
 };
 
 const Chart = ({ id }) => {
-  const [chartData, setChartData] = useState();
   let { currency } = useContext(CryptoContext);
+  const [chartData, setChartData] = useState();
   const [type, setType] = useState("prices");
   const [days, setDays] = useState(14);
 
-   useLayoutEffect(() => {
-     const getChartData = async (id) => {
-       try {
-         const data = await fetch(
-           `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
-         )
-           .then((res) => res.json())
-           .then((json) => json);
+  useLayoutEffect(() => {
+    const getChartData = async (id) => {
+      try {
+        const data = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
+        )
+          .then((res) => res.json())
+          .then((json) => json);
 
-         console.log("chart-data", data);
+        console.log("chart-data", data);
 
-         let convertedData = data[type].map((item) => {
-           return {
-             date: new Date(item[0]).toLocaleDateString(),
-             [type]: item[1],
-           };
-         });
+        let convertedData = data[type].map((item) => {
+          return {
+            date: new Date(item[0]).toLocaleDateString(),
+            [type]: item[1],
+          };
+        });
 
-         console.log(convertedData);
-         setChartData(convertedData);
-       } catch (error) {
-         console.log(error);
-       }
-     };
+        console.log(convertedData);
+        setChartData(convertedData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-     getChartData(id);
-   }, [id, type, days]);
+    getChartData(id);
+  }, [id, type, days]);
 
   return (
     <div className="w-full h-[60%]">
       <ChartComponent data={chartData} currency={currency} type={type} />
       <div className="flex">
-        <button onClick={() => setType("prices")}>price</button>
-        <button onClick={() => setType("market_caps")}>market cap</button>
-        <button onClick={() => setType("total_volumes")}>total volumes</button>
+        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setType("prices")}>price</button>
+        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setType("market_caps")}>market cap</button>
+        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setType("total_volumes")}>total volumes</button>
 
-        <button onClick={() => setDays("7")}>7d</button>
-        <button onClick={() => setDays("14")}>14d</button>
-        <button onClick={() => setDays("30")}>30d</button>
+        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setDays("7")}>7d</button>
+        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setDays("14")}>14d</button>
+        <button className="text-sm py-0.5 px-1.5 ml-2" onClick={() => setDays("30")}>30d</button>
       </div>
     </div>
   );
