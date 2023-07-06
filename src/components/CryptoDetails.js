@@ -4,9 +4,28 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useLayoutEffect } from "react";
 import { useContext } from "react";
 import { CryptoContext } from "./../context/CryptoContext";
+import { useState } from "react";
 
 const HighLowIndicator = ({ currentPrice, high, low }) => {
-  return <span>indicator.......</span>;
+  const [green, setGreen] = useState();
+
+
+  return (
+    <>
+      <span
+        className="bg-red h-1.5 rounded-l-lg w-[50%]"
+        style={{ width: `${100 - green}%` }}
+      >
+        &nbsp;
+      </span>
+      <span
+        className="bg-green h-1.5 rounded-r-lg w-[50%]"
+        style={{ width: `${green}%` }}
+      >
+        &nbsp;
+      </span>
+    </>
+  );
 };
 
 const CryptoDetails = () => {
