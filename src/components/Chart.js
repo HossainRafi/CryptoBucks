@@ -15,15 +15,15 @@ const ChartComponent = ({ data }) => {
   return (
     <ResponsiveContainer height={"90%"}>
       <LineChart width={400} height={400} data={data}>
-        <CartesianGrid stroke="#ccc" />
         <Line
           type="monotone"
           dataKey="prices"
           stroke="#14ffec"
           strokeWidth={"1px"}
         />
-        <XAxis dataKey="date" />
-        <YAxis />
+        <CartesianGrid stroke="#323232" />
+        <XAxis dataKey="date" hide />
+        <YAxis dataKey={"prices"} hide domain={["auto", "auto"]} />
         <Tooltip />
         <Legend />
       </LineChart>
