@@ -87,11 +87,16 @@ const Chart = ({ id }) => {
     };
 
     getChartData(id);
-  }, [id]);
+  }, [id, type]);
 
   return (
     <div className="w-full h-[60%]">
       <ChartComponent data={chartData} currency={currency} type={type} />
+      <div className="flex">
+        <button onClick={() => setType("prices")}>price</button>
+        <button onClick={() => setType("market_caps")}>market cap</button>
+        <button onClick={() => setType("total_volumes")}>total volumes</button>
+      </div>
     </div>
   );
 };
