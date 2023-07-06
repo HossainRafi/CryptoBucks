@@ -327,6 +327,15 @@ const CryptoDetails = () => {
             {/* =========== Right data section =========== */}
             <div className="flex flex-col w-[55%] h-full pl-3">
               <Chart id={data.id} />
+
+              <div className="flex flex-col mt-4">
+                <h3>
+                  <span>
+                    market cap rank:{" "}
+                  </span>{" "}
+                  {data.market_cap_rank}{" "}
+                </h3>
+              </div>
             </div>
           </div>
         ) : null}
