@@ -354,6 +354,7 @@ const CryptoDetails = () => {
               <div className="absolute bottom-8 right-8 flex items-center">
                 {data.links.repos_url.github[0] && (
                   <a
+                    className="text-lg px-1"
                     target={"_blank"}
                     rel="noreferrer"
                     href={data.links.repos_url.github[0]}
