@@ -335,6 +335,20 @@ const CryptoDetails = () => {
                   </span>{" "}
                   {data.market_cap_rank}{" "}
                 </h3>
+
+                <h3>
+                  <span>
+                    coinGecko rank:{" "}
+                  </span>{" "}
+                  {data.coingecko_rank}{" "}
+                </h3>
+
+                <h3>
+                  <span>
+                    coinGecko score:{" "}
+                  </span>{" "}
+                  {data.coingecko_score}{" "}
+                </h3>
               </div>
             </div>
           </div>
