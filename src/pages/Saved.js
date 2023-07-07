@@ -159,7 +159,7 @@ const Saved = () => {
           </table>
         ) : (
           <h1 className="min-h-[60vh] text-lg text-cyan flex items-center justify-center">
-            There is no data to display!
+            No saved coins to display !!
           </h1>
         )}
       </div>

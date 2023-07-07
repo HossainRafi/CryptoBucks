@@ -1,23 +1,29 @@
-import { createContext, useState, useLayoutEffect } from "react";
+import { createContext, useLayoutEffect, useState } from "react";
 
 // ============= Create context object ============
 export const CryptoContext = createContext({});
 
 // ============= Create provider component =============
 export const CryptoProvider = ({ children }) => {
-  // ================ States ====================
+  // ================ State Variables ====================
   const [cryptoData, setCryptoData] = useState();
   const [searchData, setSearchData] = useState();
-  const [coinSearch, setCoinSearch] = useState("");
   const [coinData, setCoinData] = useState();
+
+  const [coinSearch, setCoinSearch] = useState("");
+
   const [currency, setCurrency] = useState("usd");
   const [sortBy, setSortBy] = useState("market_cap_desc");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(250);
   const [perPage, setPerPage] = useState(5);
 
+  // ========== Error State ==========
+  const [error, setError] = useState({ data: "", coinData: "", search: "" }); // =========== Can catch THREE (3) errors and send them as prop value ============
+
   // ================ Get crypto data ===============
   const getCryptoData = async () => {
+    setError({ ...error, data: "" });
     setCryptoData();
     setTotalPages(13220);
 
@@ -26,7 +32,14 @@ export const CryptoProvider = ({ children }) => {
       const data = await fetch(
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${coinSearch}&order=${sortBy}&per_page=${perPage}&page=${page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
       )
-        .then((res) => res.json())
+        .then(async (res) => {
+          if (res.ok) {
+            return res.json();
+          }
+          let errorResponse = await res.json();
+          setError({ ...error, data: errorResponse.error });
+          throw new Error(errorResponse.error);
+        })
         .then((json) => json);
       setCryptoData(data);
     } catch (error) {
@@ -34,6 +47,7 @@ export const CryptoProvider = ({ children }) => {
     }
   };
 
+  // ============== Function for get coin data ================
   const getCoinData = async (coinid) => {
     setCoinData();
     try {
@@ -42,8 +56,6 @@ export const CryptoProvider = ({ children }) => {
       )
         .then((res) => res.json())
         .then((json) => json);
-
-      console.log("CoinData", data);
       setCoinData(data);
     } catch (error) {
       console.log(error);
@@ -72,7 +84,7 @@ export const CryptoProvider = ({ children }) => {
 
   useLayoutEffect(() => {
     getCryptoData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coinSearch, currency, sortBy, page, perPage]);
 
   return (
@@ -95,6 +107,7 @@ export const CryptoProvider = ({ children }) => {
         perPage,
         getCoinData,
         coinData,
+        error,
       }}
     >
       {children}
