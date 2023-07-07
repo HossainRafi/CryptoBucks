@@ -473,7 +473,10 @@ const CryptoDetails = () => {
           </div>
         ) : (
           <div className="w-full min-h-[60vh] h-full flex justify-center items-center">
-            
+            <div
+              className="w-8 h-8 border-4 border-cyan rounded-full border-b-gray-200 animate-spin "
+              role="status"
+            />
             <span className="ml-2">please wait...</span>
           </div>
         )}
