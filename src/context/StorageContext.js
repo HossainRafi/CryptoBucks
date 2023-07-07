@@ -65,7 +65,7 @@ export const StorageProvider = ({ children }) => {
     } else {
       setSavedData();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allCoins]);
 
   useLayoutEffect(() => {
@@ -83,6 +83,7 @@ export const StorageProvider = ({ children }) => {
         getSavedData(totalCoins);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
