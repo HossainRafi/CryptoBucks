@@ -5,11 +5,10 @@ import "./index.css";
 
 // ======================= Import Pages =====================
 import Home from "./pages/Home";
-import Crypto from './pages/Crypto';
-import Trending from './pages/Trending';
-import Saved from './pages/Saved';
-import CryptoDetails from './components/CryptoDetails';
-
+import Crypto from "./pages/Crypto";
+import Trending from "./pages/Trending";
+import Saved from "./pages/Saved";
+import CryptoDetails from "./components/CryptoDetails";
 
 // ================== React Router Pages ===================
 const router = createBrowserRouter([
@@ -30,6 +29,12 @@ const router = createBrowserRouter([
       {
         path: "/trending",
         element: <Trending />,
+        children: [
+          {
+            path: ":coinId",
+            element: <CryptoDetails />,
+          },
+        ],
       },
       {
         path: "/saved",
