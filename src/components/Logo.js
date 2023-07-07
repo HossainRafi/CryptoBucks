@@ -8,8 +8,8 @@ const Logo = () => {
       to="/"
       className="absolute top-[1.5rem] left-[1.5rem] [text-decoration:none] text-xl text-cyan flex items-center"
     >
-      <img src={logoSvg} alt="CryptoBucks" />
-      <span>CryptoBucks</span>
+      <img src={logoSvg} alt="CryptoSite" />
+      <span>CryptoSite</span>
     </Link>
   );
 };
