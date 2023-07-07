@@ -15,7 +15,7 @@ const Navigation = () => {
           } border-0 cursor-pointer rounded capitalize font-semibold`;
         }}
       >
-        Crypto
+        crypto
       </NavLink>
 
       <NavLink

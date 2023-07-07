@@ -36,7 +36,7 @@ const Filters = () => {
         >
           <label
             htmlFor="currency"
-            className="relative flex justify-center items-center mr-2 font-bold"
+            className="relative flex justify-center items-center mr-2 font-bold capitalize"
           >
             currency:{" "}
           </label>
@@ -54,7 +54,7 @@ const Filters = () => {
 
         {/* ========== Sorting section ========== */}
         <label className="relative flex justify-center items-center">
-          <span className="font-bold mr-2">sort by: </span>
+          <span className="font-bold mr-2 capitalize">sort by: </span>
           <select
             onClick={handleSort}
             name="sortby"
