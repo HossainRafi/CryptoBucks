@@ -2,16 +2,16 @@
 
 ## Technologies:
 - React js
-- React Router DOM
 - Tailwind
-- JavaScript
-- Lodash Debounce
 - Recharts
-- CoinGecko API
+- JavaScript
 - Context API
+- CoinGecko API
+- Lodash Debounce
+- React Router DOM
 
 ## Project Description:
-### This is a "Cryptocurrency" single page React application. It is an API based website which has many features. Some important feature of this websie :-
+### This is a single page React Cryptocurrency application. It's an API based website which has many features. Some important feature of this websie :-
 - Search coin functionality
 - Currency change functionality
 - Trending coin option
@@ -22,6 +22,12 @@
 - Pagination functionality
 - Quantity per page changing functionality
 
+## Project Image:
+![app image](https://i.ibb.co/pfG6r6C/1.png)
+![app image](https://i.ibb.co/yFTnkDx/3.png)
+![app image](https://i.ibb.co/BBXgK0N/2.png)
+![app image](https://i.ibb.co/J2zpXSW/4.png)
+![app image](https://i.ibb.co/C6BMqVx/5.png)
 
 
 
