@@ -148,7 +148,15 @@ const TableComponent = ({ data }) => {
               })}
             </tbody>
           </table>
-        ) : null}
+        ) : (
+          <div className="w-full min-h-[50vh] flex justify-center items-center">
+            <div
+              className="w-8 h-8 border-4 border-solid border-cyan rounded-full border-b-gray-200 animate-spin"
+              role="status"
+            />
+            <span className="text-base ml-2">please wait...</span>
+          </div>
+        )}
       </div>
 
       {/* ============= Pagination section ============= */}
