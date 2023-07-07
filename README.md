@@ -1,4 +1,4 @@
-# Project Name: [CryptoSite](https://react-crypto-site.netlify.app)
+# Project Name: [CryptoSite](https://cryptosite-reactapp.netlify.app)
 
 ## Technologies:
 - React js
@@ -22,7 +22,7 @@
 - Pagination functionality
 - Quantity per page changing functionality
 
-## Project Image:
+## Project Images:
 ![app image](https://i.ibb.co/pfG6r6C/1.png)
 ![app image](https://i.ibb.co/yFTnkDx/3.png)
 ![app image](https://i.ibb.co/BBXgK0N/2.png)
