@@ -2,15 +2,36 @@ import React, { useContext } from "react";
 import { CryptoContext } from "./../context/CryptoContext";
 import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
+import { StorageContext } from "./../context/StorageContext";
 
-const SaveBtn = () => {
+const SaveBtn = ({ data }) => {
+  // ========== State variables ============
+  const { saveCoin, allCoins } = useContext(StorageContext);
+
+  // ========== Saved coin function ==========
+  const handleClick = (e) => {
+    e.preventDefault();
+    saveCoin(data.id);
+  };
+
   return (
-    <button className="outline-0 border-0 bg-none cursor-pointer">
+    // ========== Star icon btn ==========
+    <button
+      onClick={(e) => handleClick(e)}
+      className="outline-0 border-0 bg-none cursor-pointer"
+    >
       <svg
-        className="w-[1.5rem] ml-1.5 fill-gray-100 hover:fill-cyan"
+        className={`w-[1.5rem] ml-1.5 
+                      ${
+                        allCoins.includes(data.id)
+                          ? "fill-cyan"
+                          : "fill-gray-100"
+                      }
+                       hover:fill-cyan`}
         width="30"
         height="30"
         viewBox="0 0 30 30"
+        fill="cyan"
         xmlns="http://www.w3.org/2000/svg"
       >
         <g clipPath="url(#clip0_16_420)">
@@ -54,7 +75,6 @@ const TableComponent = ({ data }) => {
                     className="text-center text-base border-b border-gray-100 hover:bg-gray-20 last:border-b-0"
                   >
                     <td className="py-4 flex items-center uppercase">
-
                       {/* =========== Start icon btn component =========== */}
                       <SaveBtn data={data} />
 
