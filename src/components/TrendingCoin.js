@@ -36,6 +36,11 @@ const TrendingCoin = ({ data }) => {
             <span className="text-gray-100 capitalize">score:&nbsp;</span>
             <span className="text-cyan">{data.score}</span>
           </h3>
+          <img
+            src={data.large}
+            alt={data.name}
+            className="w-[35%] h-auto rounded-full absolute top-2/4 -right-12 -translate-y-2/4"
+          />
         </>
       ) : null}
     </div>
