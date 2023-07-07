@@ -41,7 +41,6 @@ const CryptoDetails = () => {
 
   useLayoutEffect(() => {
     getCoinData(coinId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coinId]);
 
   // ========== Close popup =========
