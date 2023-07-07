@@ -6,7 +6,8 @@ const TrendingCoin = ({ data }) => {
       {data ? (
         <h3>
           <span>name: </span>
-          <span>{data.item.name}</span>
+          <span>{data.name}</span>
+          <img src={data.small} alt="" />
         </h3>
       ) : null}
     </div>
