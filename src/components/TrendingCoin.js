@@ -15,6 +15,7 @@ const TrendingCoin = ({ data }) => {
     >
       {data ? (
         <>
+          {/* =========== Coin name & small image ============ */}
           <h3 className="text-base flex items-center my-0.5">
             <span className="text-gray-100 capitalize">name:&nbsp;</span>
             <span className="text-cyan">{data.name}</span>
@@ -24,12 +25,16 @@ const TrendingCoin = ({ data }) => {
               className="w-[1.5rem] h-[1.5rem] mx-1.5 rounded-full"
             />
           </h3>
+
+          {/* =========== Market cap rank ============ */}
           <h3 className="text-base flex items-center my-0.5">
             <span className="text-gray-100 capitalize">
               market cap rank:&nbsp;
             </span>
             <span className="text-cyan">{data.market_cap_rank}</span>
           </h3>
+
+          {/* =========== Price ============ */}
           <h3 className="text-base flex items-center my-0.5">
             <span className="text-gray-100 capitalize">
               price (in btc):&nbsp;
@@ -42,17 +47,29 @@ const TrendingCoin = ({ data }) => {
               }).format(data.price_btc)}
             </span>
           </h3>
+
+          {/* =========== Score ============ */}
           <h3 className="text-base flex items-center my-0.5">
             <span className="text-gray-100 capitalize">score:&nbsp;</span>
             <span className="text-cyan">{data.score}</span>
           </h3>
+
+          {/* =========== Large image ============ */}
           <img
             src={data.large}
             alt={data.name}
             className="w-[35%] h-auto rounded-full absolute top-2/4 -right-12 -translate-y-2/4"
           />
         </>
-      ) : null}
+      ) : (
+        <div className="w-full  h-full flex justify-center items-center">
+          <div
+            className="w-8 h-8 border-4 border-cyan rounded-full border-b-gray-200 animate-spin"
+            role="status"
+          />
+          <span className="ml-2">please wait...</span>
+        </div>
+      )}
     </div>
   );
 };
