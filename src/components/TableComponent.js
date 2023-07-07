@@ -6,12 +6,18 @@ import { StorageContext } from "./../context/StorageContext";
 
 const SaveBtn = ({ data }) => {
   // ========== State variables ============
-  const { saveCoin, allCoins } = useContext(StorageContext);
+  const { saveCoin, allCoins, removeCoin } = useContext(StorageContext);
 
   // ========== Saved coin function ==========
   const handleClick = (e) => {
     e.preventDefault();
     saveCoin(data.id);
+
+    if (allCoins.includes(data.id)) {
+      removeCoin(data.id);
+    } else {
+      saveCoin(data.id);
+    }
   };
 
   return (
