@@ -41,7 +41,7 @@ const CryptoDetails = () => {
 
   useLayoutEffect(() => {
     getCoinData(coinId);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coinId]);
 
   // ========== Close popup =========
@@ -51,18 +51,17 @@ const CryptoDetails = () => {
 
   return ReactDOM.createPortal(
     <div
-      className="fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 first-letter: backdrop-blur-sm flex items-center justify-center font-nunito cursor-pointer
-    "
       onClick={close}
+      className="fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 first-letter: backdrop-blur-sm flex items-center justify-center font-nunito cursor-pointer"
     >
       <div
-        className="w-[65%] h-[75%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative cursor-default"
         onClick={(e) => e.stopPropagation()}
+        className="w-[65%] h-[75%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative cursor-default"
       >
         {data ? (
           <div className="flex items-center justify-between h-full w-full p-4">
             {/* ================= Left side data ================ */}
-            <div className="flex flex-col w-[45%] h-full pr-2 ">
+            <div className="flex flex-col w-[45%] h-full pr-2">
               {/* ======== Image & symbol =========== */}
               <div className="flex w-full items-center">
                 <img
@@ -71,12 +70,7 @@ const CryptoDetails = () => {
                   alt={data.id}
                 />
                 <h1 className="text-xl capitalize font-medium">{data.name}</h1>
-                <span
-                  className="text-sm
-        py-0.5 px-2.5 ml-2 bg-cyan text-cyan bg-opacity-25
-        rounded uppercase
-        "
-                >
+                <span className="text-sm py-0.5 px-2.5 ml-2 bg-cyan text-cyan bg-opacity-25 rounded uppercase">
                   {data.symbol}
                 </span>
               </div>
@@ -89,14 +83,11 @@ const CryptoDetails = () => {
                       Price
                     </span>
                     <div
-                      className={`text-sm px-1 ml-2 font-medium flex items-center
-          rounded uppercase bg-opacity-25
-          ${
-            data.market_data.price_change_percentage_24h > 0
-              ? "bg-green text-green"
-              : "bg-red text-red"
-          }
-          `}
+                      className={`text-sm px-1 ml-2 font-medium flex items-center rounded uppercase bg-opacity-25 ${
+                        data.market_data.price_change_percentage_24h > 0
+                          ? "bg-green text-green"
+                          : "bg-red text-red"
+                      }`}
                     >
                       <span>
                         {Number(
@@ -249,16 +240,16 @@ const CryptoDetails = () => {
                   <a
                     target={"_blank"}
                     rel="noreferrer"
-                    className="text-sm bg-gray-200 text-gray-100 px-1.5 py-0.5 my-1 rounded"
                     href={data?.links?.homepage[0]}
+                    className="text-sm bg-gray-200 text-gray-100 px-1.5 py-0.5 my-1 rounded"
                   >
                     {data?.links?.homepage[0].substring(0, 30)}
                   </a>
                   <a
                     target={"_blank"}
                     rel="noreferrer"
-                    className="text-sm bg-gray-200 text-gray-100 px-1.5 py-0.5 my-1 rounded"
                     href={data?.links?.blockchain_site[0]}
+                    className="text-sm bg-gray-200 text-gray-100 px-1.5 py-0.5 my-1 rounded"
                   >
                     {data?.links?.blockchain_site[0].substring(0, 30)}
                   </a>
@@ -267,8 +258,8 @@ const CryptoDetails = () => {
                     <a
                       target={"_blank"}
                       rel="noreferrer"
-                      className="text-sm bg-gray-200 text-gray-100 px-1.5 py-0.5 my-1 rounded"
                       href={data?.links?.official_forum_url[0]}
+                      className="text-sm bg-gray-200 text-gray-100 px-1.5 py-0.5 my-1 rounded"
                     >
                       {data?.links?.official_forum_url[0].substring(0, 30)}
                     </a>
@@ -282,10 +273,7 @@ const CryptoDetails = () => {
                   </span>
                   <div className="flex justify-between">
                     <div
-                      className={`text-sm px-1 ml-2 my-1 font-medium flex items-center
-          rounded uppercase bg-opacity-25 bg-green text-green
-          
-          `}
+                      className={`text-sm px-1 ml-2 my-1 font-medium flex items-center rounded uppercase bg-opacity-25 bg-green text-green`}
                     >
                       <span>
                         {Number(data.sentiment_votes_up_percentage).toFixed(2)}%
@@ -308,10 +296,7 @@ const CryptoDetails = () => {
 
                   <div className="flex justify-between">
                     <div
-                      className={`text-sm px-1 ml-2 my-1 font-medium flex items-center
-          rounded uppercase bg-opacity-25
-           bg-red text-red
-          `}
+                      className={`text-sm px-1 ml-2 my-1 font-medium flex items-center rounded uppercase bg-opacity-25 bg-red text-red`}
                     >
                       <span>
                         {Number(data.sentiment_votes_down_percentage).toFixed(
@@ -339,7 +324,7 @@ const CryptoDetails = () => {
             </div>
 
             {/* =========== Right data section =========== */}
-            <div className="flex flex-col w-[55%] h-full pl-3 ">
+            <div className="flex flex-col w-[55%] h-full pl-3">
               {/* ==== Chart component ==== */}
               <Chart id={data.id} />
 
@@ -486,7 +471,12 @@ const CryptoDetails = () => {
               )}
             </div>
           </div>
-        ) : null}
+        ) : (
+          <div className="w-full min-h-[60vh] h-full flex justify-center items-center">
+            
+            <span className="ml-2">please wait...</span>
+          </div>
+        )}
       </div>
     </div>,
     document.getElementById("model")
