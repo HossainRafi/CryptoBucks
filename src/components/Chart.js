@@ -102,57 +102,57 @@ const Chart = ({ id }) => {
       {/* ============ Buttons for changing value based on topics & dates ============ */}
       <div className="flex">
         <button
+          onClick={() => setType("prices")}
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
             type === "prices"
               ? "bg-cyan text-cyan"
               : "bg-gray-200 text-gray-100"
           }`}
-          onClick={() => setType("prices")}
         >
           price
         </button>
         <button
+          onClick={() => setType("market_caps")}
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
             type === "market_caps"
               ? "bg-cyan text-cyan"
               : "bg-gray-200 text-gray-100"
           }`}
-          onClick={() => setType("market_caps")}
         >
           market cap
         </button>
         <button
+          onClick={() => setType("total_volumes")}
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
             type === "total_volumes"
               ? "bg-cyan text-cyan"
               : "bg-gray-200 text-gray-100"
           }`}
-          onClick={() => setType("total_volumes")}
         >
           total volume
         </button>
 
         <button
+          onClick={() => setDays(7)}
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
             days === 7 ? "bg-cyan text-cyan" : "bg-gray-200 text-gray-100"
           }`}
-          onClick={() => setDays(7)}
         >
           7d
         </button>
         <button
+          onClick={() => setDays(14)}
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
             days === 14 ? "bg-cyan text-cyan" : "bg-gray-200 text-gray-100"
           }`}
-          onClick={() => setDays(14)}
         >
           14d
         </button>
         <button
+          onClick={() => setDays(30)}
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
             days === 30 ? "bg-cyan text-cyan" : "bg-gray-200 text-gray-100"
           }`}
-          onClick={() => setDays(30)}
         >
           30d
         </button>
