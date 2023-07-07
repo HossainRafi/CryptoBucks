@@ -54,9 +54,10 @@ const TableComponent = ({ data }) => {
                     className="text-center text-base border-b border-gray-100 hover:bg-gray-20 last:border-b-0"
                   >
                     <td className="py-4 flex items-center uppercase">
-                      {/* =================================================================================== */}
+
+                      {/* =========== Start icon btn component =========== */}
                       <SaveBtn data={data} />
-                      {/* =================================================================================== */}
+
                       <img
                         className="w-[1.2rem] h-[1.2rem] mx-1.5"
                         src={data.image}
