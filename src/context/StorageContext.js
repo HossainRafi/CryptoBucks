@@ -7,10 +7,10 @@ import {
 } from "react";
 import { CryptoContext } from "./CryptoContext";
 
-// create context object
+// ============= create context object ===============
 export const StorageContext = createContext({});
 
-// create the provider component
+// ============= create the provider component =============
 export const StorageProvider = ({ children }) => {
   const [allCoins, setAllCoins] = useState([]);
   const [savedData, setSavedData] = useState();
