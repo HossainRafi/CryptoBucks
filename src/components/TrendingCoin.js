@@ -14,13 +14,13 @@ const TrendingCoin = ({ data }) => {
               className="w-[1.5rem] h-[1.5rem] mx-1.5 rounded-full"
             />
           </h3>
-          <h3 className="txt-base flex items-center my-0.5">
+          <h3 className="text-base flex items-center my-0.5">
             <span className="text-gray-100 capitalize">
               market cap rank:&nbsp;
             </span>
             <span className="text-cyan">{data.market_cap_rank}</span>
           </h3>
-          <h3 className="txt-base flex items-center my-0.5">
+          <h3 className="text-base flex items-center my-0.5">
             <span className="text-gray-100 capitalize">
               price (in btc):&nbsp;
             </span>
@@ -31,6 +31,10 @@ const TrendingCoin = ({ data }) => {
                 maximumSignificantDigits: 5,
               }).format(data.price_btc)}
             </span>
+          </h3>
+          <h3 className="text-base flex items-center my-0.5">
+            <span className="text-gray-100 capitalize">score:&nbsp;</span>
+            <span className="text-cyan">{data.score}</span>
           </h3>
         </>
       ) : null}
