@@ -20,16 +20,12 @@ const PerPage = () => {
 
   return (
     <form
-      className="relative flex items-center font-nunito
-          mr-12
-          "
       onSubmit={handleSubmit}
+      className="relative flex items-center font-nunito mr-12"
     >
       <label
         htmlFor="perpage"
-        className="relative flex justify-center items-center
-          mr-2 font-bold
-          "
+        className="relative flex justify-center items-center mr-2 font-bold"
       >
         per page:{" "}
       </label>
@@ -40,10 +36,7 @@ const PerPage = () => {
         max={250}
         ref={inputRef}
         placeholder="05"
-        className="w-16 rounded bg-gray-200 placeholder:text-gray-100
-     pl-2 required outline-0 border border-transparent 
-     focus:border-cyan leading-4
-     "
+        className="w-16 rounded bg-gray-200 placeholder:text-gray-100 pl-2 required outline-0 border border-transparent focus:border-cyan leading-4"
       />
       <button type="submit" className="ml-1 cursor-pointer">
         <img src={submitIcon} alt="submit" className="w-full h-auto" />
@@ -101,7 +94,7 @@ const Pagination = () => {
         <PerPage />
         <ul className="flex items-center justify-end text-sm">
           <li className="flex items-center">
-            <button className="outline-0 hover:text-cyan w-8" onClick={prev}>
+            <button onClick={prev} className="outline-0 hover:text-cyan w-8">
               <img
                 className="w-full h-auto rotate-180"
                 src={paginationArrow}
@@ -176,7 +169,7 @@ const Pagination = () => {
             </li>
           ) : null}
           <li>
-            <button className="outline-0 hover:text-cyan w-7" onClick={next}>
+            <button onClick={next} className="outline-0 hover:text-cyan w-7">
               <img
                 className="w-full h-auto"
                 src={paginationArrow}
