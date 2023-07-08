@@ -69,11 +69,13 @@ const Filters = () => {
             <option value="gecko_desc">gecko desc</option>
             <option value="gecko_asc">gecko asc</option>
           </select>
-          <img
+          {/* =================== Commented Code ================== */}
+          {/* <img
             src={selectIcon}
             alt="submit"
             className="w-[1rem] h-auto absolute right-0 top-2 pointer-events-none"
-          />
+          /> */}
+          {/* ================== Commented Code =================== */}
         </label>
         <button
           onClick={resetFunction}
