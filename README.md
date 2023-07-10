@@ -28,18 +28,3 @@
 ![app image](https://i.ibb.co/BBXgK0N/2.png)
 ![app image](https://i.ibb.co/J2zpXSW/4.png)
 ![app image](https://i.ibb.co/C6BMqVx/5.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
