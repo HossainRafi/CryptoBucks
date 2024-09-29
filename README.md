@@ -26,18 +26,3 @@
 ![app image](https://i.ibb.co/pfG6r6C/1.png)
 ![app image](https://i.ibb.co/yFTnkDx/3.png)
 ![app image](https://i.ibb.co/BBXgK0N/2.png)
-![app image](https://i.ibb.co/J2zpXSW/4.png)
-<<<<<<< HEAD
-![app image](https://i.ibb.co/C6BMqVx/5.png)
-=======
-![app image](https://i.ibb.co/C6BMqVx/5.png)
-
-
-
-
-
-
-
-
-
->>>>>>> a057e4a408a6e793f645f79a32e4444124fa14d1
